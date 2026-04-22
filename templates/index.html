@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I’m Sorry 💔</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- FIRST SCREEN -->
+<div class="container">
+    <h1 class="fade">I’m really sorry…</h1>
+
+    <p class="fade delay1">
+        I know I hurt you, and I truly regret it.
+    </p>
+
+    <button class="fade delay2" onclick="openLetter()">
+        Click if you’ll hear me out 💌
+    </button>
+</div>
+
+<!-- LETTER SCREEN -->
+<div id="letter" class="letter">
+    <div class="letter-content">
+        <p>
+            Hey Baby…<br><br>
+
+            I’ve been thinking about everything, and I hate that I hurt you.  
+            You mean so much to me, and I never wanted to be the reason for your pain or be a disappointment.<br><br>
+
+            I miss you. I miss us.  
+            And I truly want to make things right.<br><br>
+
+            Please don't shut me off like this, its the worst thing possible.
+            I love you so much.
+            Forgive me please?<br><br>
+
+            I know words aren’t enough… but I mean every single one of these ❤️ <br><br>
+            ILoveYouBaby!<br><br>
+            Yours,
+            Noushey.<br><br>
+        </p>
+
+        <button onclick="closeLetter()">Go back</button>
+    </div>
+</div>
+
+<script>
+function openLetter() {
+    document.getElementById("letter").classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeLetter() {
+    document.getElementById("letter").classList.remove("active");
+    document.body.style.overflow = "auto";
+}
+</script>
+
+</body>
+</html>

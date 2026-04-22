@@ -1,0 +1,113 @@
+/* BASE */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background: url("/static/our_photo.jpg") center/cover no-repeat fixed;
+}
+
+/* DARK OVERLAY */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* MAIN SCREEN */
+.container {
+    position: relative;
+    z-index: 1;
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* TEXT */
+h1 {
+    color: #9ED3DC;
+}
+
+p {
+    max-width: 500px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #9ED3DC;
+}
+
+/* FADE ANIMATION */
+.fade {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.delay1 { animation-delay: 1s; }
+.delay2 { animation-delay: 2s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* LETTER FULL SCREEN */
+.letter {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url("/static/letter_bg.jpg") center/cover no-repeat;
+    z-index: 10;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* SHOW LETTER */
+.letter.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* LETTER OVERLAY */
+.letter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* LETTER CONTENT */
+.letter-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    text-align: center;
+    color: #ffe4e1;
+    line-height: 1.8;
+    padding: 20px;
+}
